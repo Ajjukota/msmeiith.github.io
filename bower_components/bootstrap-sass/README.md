@@ -30,7 +30,7 @@ gem 'sass-rails', '>= 3.2'
 
 `bundle install` and restart your server to make the files available through the pipeline.
 
-Import Bootstrap styles in `appassets/stylesheets/application.scss`:
+Import Bootstrap styles in `app/assets/stylesheets/application.scss`:
 
 ```scss
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
@@ -44,14 +44,14 @@ Make sure the file has `.scss` extension (or `.sass` for Sass syntax). If you ha
 it may come with a `.css` file instead. If this file exists, it will be served instead of Sass, so rename it:
 
 ```console
-$ mv appassets/stylesheets/application.css appassets/stylesheets/application.scss
+$ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
 ```
 
 Then, remove all the `*= require_self` and `*= require_tree .` statements from the sass file. Instead, use `@import` to import Sass files.
 
 Do not use `*= require` in Sass or your other stylesheets will not be [able to access][antirequire] the Bootstrap mixins or variables.
 
-Require Bootstrap Javascripts in `appassets/javascripts/application.js`:
+Require Bootstrap Javascripts in `app/assets/javascripts/application.js`:
 
 ```js
 //= require jquery
@@ -74,7 +74,7 @@ root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
   config.assets.paths << bower_path
 end
 # Precompile Bootstrap fonts
-config.assets.precompile << %r(bootstrap-sassassets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
+config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
 # Minimum Sass number precision required by bootstrap-sass
 ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
 ```
@@ -82,15 +82,15 @@ config.assets.precompile << %r(bootstrap-sassassets/fonts/bootstrap/[\w-]+\.(?:e
 Replace Bootstrap `@import` statements in `application.scss` with:
 
 ```scss
-$icon-font-path: "bootstrap-sassassets/fonts/bootstrap/";
-@import "bootstrap-sassassets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sassassets/stylesheets/bootstrap";
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
 ```
 
 Replace Bootstrap `require` directive in `application.js` with:
 
 ```js
-//= require bootstrap-sassassets/javascripts/bootstrap-sprockets
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 ```
 
 #### Rails 4.x
@@ -229,8 +229,8 @@ To match [upstream Bootstrap's level of browser compatibility](http://getbootstr
 
 ### JavaScript
 
-[`assets/javascripts/bootstrap.js`](assets/javascripts/bootstrap.js) contains all of Bootstrap's JavaScript,
-concatenated in the [correct order](assets/javascripts/bootstrap-sprockets.js).
+[`assets/javascripts/bootstrap.js`](/assets/javascripts/bootstrap.js) contains all of Bootstrap's JavaScript,
+concatenated in the [correct order](/assets/javascripts/bootstrap-sprockets.js).
 
 
 #### JavaScript with Sprockets or Mincer
