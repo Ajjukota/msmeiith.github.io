@@ -33,30 +33,30 @@ future: true
 theme: jekyll-theme-prologue
 
 # Collections
-collections_dir: sections
-collections:
-  homepage_includes:
-    output: true
-  academics:
-    output: true
-  admissions:
-    output: true
-  people:
-    output: true
-  custom:
-    output: true
-  research:
-    output: true
-   industry:
-     output: true
-  outreach:
-    output: true
-  talks:
-    output: true
-  news:
-    output: true
-  highlights:
-    output: true
+#collections_dir: sections
+#collections:
+#  homepage_includes:
+#    output: true
+#  academics:
+#    output: true
+#  admissions:
+#    output: true
+#  people:
+#    output: true
+#  custom:
+#    output: true
+#  research:
+#    output: true
+#   industry:
+#     output: true
+#  outreach:
+#    output: true
+#  talks:
+#    output: true
+#  news:
+#    output: true
+#  highlights:
+#    output: true
 
 sass:
   # loading path from site root
